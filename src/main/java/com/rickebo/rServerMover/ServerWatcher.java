@@ -55,6 +55,9 @@ public class ServerWatcher
 		isDown = !status;
 		
 		if (isChange)
-			callback.run();
+		{
+			plugin.getLogger().info("[rServerMover] \"Rejoin-server\" startup detected.");
+			new Thread(callback::run).start();
+		}
 	}
 }

@@ -8,3 +8,11 @@ fromServer: "lobby"
 # Amount of servers to send to new server once reopened
 # per second. Useful to reduce server load
 playersPerSecond: 3
+
+# The timeout of a player move. Specifies how long the
+# plugin waits before it tries to move a player again
+playerMoveTimeout: 10000
+
+# The message, after the [MCS] prefix, which a player
+# sees once being moved
+movePlayerMessage: "Switching server...";
