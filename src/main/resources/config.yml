@@ -1,0 +1,10 @@
+# The server to move players to, once it has started
+rejoinServer: "factions"
+
+# The server to move players from, once rejoin-server
+# has started
+fromServer: "lobby"
+
+# Amount of servers to send to new server once reopened
+# per second. Useful to reduce server load
+playersPerSecond: 3

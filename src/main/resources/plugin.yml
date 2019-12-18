@@ -1,0 +1,4 @@
+name: rServerMover
+main: com.rickebo.rServerMover.Initializer
+version: 0.1
+author: rickebo
