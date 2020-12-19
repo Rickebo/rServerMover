@@ -77,6 +77,9 @@ public class PlayerMover
 		ServerInfo si = plugin.getProxy().getServerInfo(fromServer);
 		ServerInfo target = plugin.getProxy().getServerInfo(targetServer);
 		
+		if (!G.isEnableServerMover())
+			return;
+		
 		if (si == null)
 		{
 			plugin.getLogger().severe("[rServerMover] Could not find the server to move players from.");

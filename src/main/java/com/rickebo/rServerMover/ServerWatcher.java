@@ -57,6 +57,13 @@ public class ServerWatcher
 		if (isChange)
 		{
 			plugin.getLogger().info("[rServerMover] \"Rejoin-server\" startup detected.");
+			
+			if (!G.isEnableServerMover())
+			{
+				plugin.getLogger().info("[rServerMover] Ignoring startup since server mover has been disabled.");
+				return;
+			}
+			
 			new Thread(callback::run).start();
 		}
 	}

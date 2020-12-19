@@ -1,4 +1,5 @@
 package com.rickebo.rServerMover.settings;
+import com.google.common.base.Charsets;
 import com.rickebo.rServerMover.G;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.introspector.PropertyUtils;
@@ -63,7 +64,8 @@ public class SettingsLoader
 	private static <T> T readSettings(File settingsFile, Class<T> base, Class<?>... subClasses)
 			throws FileNotFoundException
 	{
-		FileReader reader = new FileReader(settingsFile);
+		InputStreamReader reader = new InputStreamReader(
+				new FileInputStream(settingsFile), Charsets.UTF_8);
 		
 		PropertyUtils utils = new PropertyUtils();
 		utils.setAllowReadOnlyProperties(true);

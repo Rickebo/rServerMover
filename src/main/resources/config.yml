@@ -16,3 +16,10 @@ playerMoveTimeout: 10000
 # The message, after the [MCS] prefix, which a player
 # sees once being moved
 movePlayerMessage: "Switching server...";
+
+messagePrefix: "§7[§6MCS§7] "
+
+highlightColor: "§6"
+textColor: "§7"
+
+moverCommand: "servermover"

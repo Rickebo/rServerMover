@@ -1,6 +1,8 @@
 package com.rickebo.rServerMover;
 
+import com.rickebo.rServerMover.commands.MoverCommand;
 import com.rickebo.rServerMover.settings.SettingsLoader;
+import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Plugin;
 
 import java.io.File;
@@ -18,7 +20,7 @@ public class Initializer extends Plugin
 			beginInitialization();
 		} catch (IOException ex)
 		{
-			getLogger().severe("An exception has occurred while initializing rAntiVPN.:" + ex.getMessage());
+			getLogger().severe("An exception has occurred while initializing rServerMover.:" + ex.getMessage());
 			ex.printStackTrace();
 		}
 	}
@@ -27,6 +29,13 @@ public class Initializer extends Plugin
 	{
 		initSettings();
 		initEvents();
+		initCommands();
+	}
+	
+	public void initCommands()
+	{
+		MoverCommand command = new MoverCommand(G.settings.getMoverCommand());
+		getProxy().getPluginManager().registerCommand(this, command);
 	}
 	
 	public void initSettings() throws IOException
