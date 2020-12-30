@@ -8,6 +8,7 @@ public class Settings
 	public String fromServer = "lobby";
 	public int playersPerSecond = 3;
 	public int playerMoveTimeout = 10000;
+	public int remotePort = 25564;
 	public String movePlayerMessage = "Switching server...";
 	public String messagePrefix = "§7[§6MCS§7] ";
 	
@@ -19,6 +20,16 @@ public class Settings
 	public Settings()
 	{
 	
+	}
+	
+	public int getRemotePort()
+	{
+		return remotePort;
+	}
+	
+	public void setRemotePort(int remotePort)
+	{
+		this.remotePort = remotePort;
 	}
 	
 	public String getMoverCommand()

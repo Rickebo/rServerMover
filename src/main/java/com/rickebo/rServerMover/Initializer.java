@@ -47,8 +47,11 @@ public class Initializer extends Plugin
 	
 	public void initEvents()
 	{
-		G.playerMover = new PlayerMover(G.plugin, G.settings.fromServer, G.settings.rejoinServer, G.settings.playersPerSecond, G.settings.movePlayerMessage, G.settings.playerMoveTimeout);
-		G.watcher = new ServerWatcher(G.plugin, G.settings.rejoinServer, G.playerMover::startMoving);
+		G.playerMover = new PlayerMover(G.plugin, G.settings.fromServer, G.settings.rejoinServer,
+				G.settings.playersPerSecond, G.settings.movePlayerMessage, G.settings.playerMoveTimeout);
+		
+		G.watcher = new ServerWatcher(G.plugin, G.settings.rejoinServer, G.settings.remotePort,
+				G.playerMover::startMoving);
 		
 		G.watcher.start();
 	}
